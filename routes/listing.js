@@ -12,15 +12,15 @@ const upload = multer({ storage });
 router
     .route("/")
     .get(wrapAsync(listingController.index))
-    // .post(
-    //     isLoggedIn,
-    //     upload.single("listing[image]"),
-    //     validateListing,
-    //     wrapAsync(listingController.createListing)
-    // );
-    .post(upload.single("listing[image]"),(req,res)=>{
-            res.send(req.file);
-    });
+    .post(
+        isLoggedIn,
+        upload.single("listing[image]"),
+        validateListing,
+        wrapAsync(listingController.createListing)
+    );
+    // .post(upload.single("listing[image]"),(req,res)=>{
+    //         res.send(req.file);
+    // });
 
 
 // New Route
@@ -35,6 +35,7 @@ router
     .put(
         isLoggedIn,
         isOwner,
+        upload.single("listing[image]"),
         validateListing,
         wrapAsync(listingController.updateListing)) //Upate Route
     .delete( 
