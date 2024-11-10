@@ -14,8 +14,8 @@ https://project-wonderlust-790r.onrender.com/listings
     * Description
     * Price
     * Location (with map)
-    * Images
-* **Property Search:** Users can search for properties based on location, price, and other criteria.
+    * Image
+      
 * **Booking System:** (Under development) Users will be able to book properties for specific dates.
 * **Review System:** Users can leave reviews for properties and hosts.
 
